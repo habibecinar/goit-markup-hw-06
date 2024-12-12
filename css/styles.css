@@ -813,10 +813,55 @@ body {
 }
 .modal {
   background-image: url(/images/peoplebg.jpg); /* Standart */
+  background-size: cover;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .modal {
     background-image: url(/images/peoplebg.jpg); /* Retina */
+  }
+}
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Menü arka planı */
+  display: none; /* Menü başlangıçta gizli */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Üstte görünmesi için */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#mobile-menu.is-open {
+  display: flex; /* Görünür hale geldiğinde menü düzeni */
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 767px) {
+  .nav-list {
+    list-style: none; /* Noktaları kaldır */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Ortala */
+  }
+
+  .nav-list li {
+    margin: 16px 0; /* Menü öğeleri arasına boşluk ekle */
+  }
+
+  .nav-list a {
+    color: white; /* Yazı rengini beyaz yap */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-size: 24px; /* Yazı boyutunu büyüt */
+    font-weight: bold; /* Yazıyı kalın yap */
+    transition: color 0.3s ease; /* Renk değişiminde geçiş animasyonu ekle */
+  }
+
+  .nav-list a:hover {
+    color: #ffcc00; /* Üzerine gelince renk değişimi */
   }
 }
