@@ -10,6 +10,20 @@ body {
   font-family: "Roboto", sans-serif;
   color: #434455;
   background-color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
 }
 
 img {
@@ -539,6 +553,7 @@ a {
   background-color: rgba(46, 47, 66, 0.4);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
 }
 
 .modal-container-wrapper {
@@ -790,11 +805,270 @@ body {
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.is-open {
+  display: block;
+}
+.modal-window {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  display: none;
+}
+
+.is-open {
+  display: block;
+}
+
+.modal-window .modal-container {
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  min-height: 584px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.modal-window .close-modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-container .close-modal-btn:hover,
+.modal-container .close-modal-btn:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #e7e9fc;
+}
+
+.modal-container .close-modal-btn .modal-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-modal-btn:focus + .close-modal-btn .modal-icon {
+  fill: #ffffff;
+}
+
+.close-modal-btn:hover + .close-modal-btn .modal-icon {
+  fill: #ffffff;
+}
+
+.modal-container-wrapper .modal-message-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+
+.modal-container-wrapper.modal-form {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.modal-container-wrapper .modal-form-item {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.modal-container-wrapper .modal-form .input-container {
+  position: relative;
+}
+
+.modal-form .form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px;
+  padding-left: 38px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form .form-input:hover,
+.modal-form .form-input:focus {
+  border-color: #4d5ae5;
+}
+
+.modal-form .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover + .input-icon,
+.form-input:focus + .input-icon {
+  fill: #4d5ae5;
+}
+
+.modal-container-wrapper .form-label {
+  margin-bottom: 16px;
+}
+
+.form-group .form-textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form .form-label .form-textarea:focus {
+  border-color: #4d5ae5;
+}
+
+.modal-container .checkbox-wrapper {
+  margin-bottom: 24px;
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.checkbox-input visually-hidden:checked + .checkbox-label .checkbox-icon {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.privacy-link {
+  color: #4d5ae5;
+}
+.submit-button {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #4d5ae5;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* Mobil cihazlar */
 @media (max-width: 767px) {
   body {
     font-size: 14px;
+  }
+  .nav-address {
+    display: none;
+  }
+  .header-container {
+    width: 100%;
+  }
+  /* SECOND SECTION */
+  .second-section-list {
+    justify-content: center;
+  }
+  .second-section-text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* THIRD SECTION */
+  .third-section-list {
+    justify-content: center;
+  }
+  /* FOURTH SECTION */
+  .fourth-section-list {
+    justify-content: center;
+  }
+  /* FOOTER SECTION */
+  .footer-logo-p-container {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+  .footer-text-socials-container {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+  }
+  .footer-socials-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 72px 0;
+  }
+  .footer-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-container {
+    padding: 96px 16px;
+  }
+  /* HAMBURGER MENU */
+  .hamburger-btn {
+    display: block;
+  }
+}
+/* MODAL SMALL */
+@media (max-width: 408px) {
+  .modal-window {
+    width: 100%;
   }
 }
 
@@ -810,10 +1084,11 @@ body {
   body {
     font-size: 18px;
   }
-}
-.modal {
-  background-image: url(/images/peoplebg.jpg); /* Standart */
-  background-size: cover;
+
+  .modal {
+    background-image: url(/images/peoplebg.jpg); /* Standart */
+    background-size: cover;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -841,27 +1116,75 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-@media (max-width: 767px) {
-  .nav-list {
-    list-style: none; /* Noktaları kaldır */
-    padding: 0;
-    margin: 0;
-    text-align: center; /* Ortala */
-  }
+.nav-list a {
+  color: white; /* Yazı rengini beyaz yap */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  font-size: 24px; /* Yazı boyutunu büyüt */
+  font-weight: bold; /* Yazıyı kalın yap */
+  transition: color 0.3s ease; /* Renk değişiminde geçiş animasyonu ekle */
+}
 
-  .nav-list li {
-    margin: 16px 0; /* Menü öğeleri arasına boşluk ekle */
-  }
+.nav-list a:hover {
+  color: #ffcc00; /* Üzerine gelince renk değişimi */
+}
 
-  .nav-list a {
-    color: white; /* Yazı rengini beyaz yap */
-    text-decoration: none; /* Alt çizgiyi kaldır */
-    font-size: 24px; /* Yazı boyutunu büyüt */
-    font-weight: bold; /* Yazıyı kalın yap */
-    transition: color 0.3s ease; /* Renk değişiminde geçiş animasyonu ekle */
-  }
+/* Gizli Checkbox */
+.menu-checkbox {
+  display: none; /* Checkbox görünmez */
+}
+/* Checkbox İşaretlendiğinde Menü Görünsün */
+.menu-checkbox:checked ~ .mobile-menu {
+  opacity: 1; /* Görünür yap */
+  transform: translateY(0); /* Normal konuma getir */
+  pointer-events: all; /* Tıklanabilir */
+}
+/* Checkbox İşaretlendiğinde Üç Çizgi Butonu Dönüşsün */
+.menu-checkbox:checked ~ .menu-button .menu-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-checkbox:checked ~ .menu-button .menu-line:nth-child(2) {
+  opacity: 0; /* Ortadaki çizgiyi gizle */
+}
+.menu-checkbox:checked ~ .menu-button .menu-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.menu-line {
+  width: 100%;
+  height: 4px;
+  background-color: #333; /* Çizgi rengi */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Nav Listesi */
+#mobile-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-  .nav-list a:hover {
-    color: #ffcc00; /* Üzerine gelince renk değişimi */
-  }
+#mobile-menu {
+  margin: 16px 0;
+}
+
+#mobile-menu {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#mobile-menu a:hover {
+  color: #ffcc00; /* Öne çıkar */
+}
+.menu-button {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100; /* Menünün üstünde olsun */
 }
