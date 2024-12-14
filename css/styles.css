@@ -147,11 +147,11 @@ a {
   padding: 188px 0;
 
   background-image: linear-gradient(
-      to botttom,
+      to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/peoplebg.jpg);
+    url("../images/peoplebg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1018,8 +1018,9 @@ body {
     width: 100%;
   }
   .first-section .container {
-    background-image: url(../images/peoplebg.jpg);
+    width: 100%;
   }
+
   body {
     font-size: 14px;
     width: 100%;
@@ -1060,6 +1061,14 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
   }
   .second-section__list-item {
     width: 288px;
@@ -1179,7 +1188,6 @@ body {
     font-size: 18px;
   }
   .first-section .container {
-    background-image: url(../images/peoplebg.jpg);
   }
 }
 
