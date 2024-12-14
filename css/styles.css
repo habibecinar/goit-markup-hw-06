@@ -141,14 +141,17 @@ a {
 
 .first-section {
   max-width: 1440px;
-  margin: 0 auto;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 188px 0;
-  background-color: #2e2f42;
+
   background-image: linear-gradient(
+      to botttom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/herobg.jpg);
+    url(../images/peoplebg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -160,6 +163,10 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 48px;
+  width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .first-section__title {
@@ -203,7 +210,6 @@ a {
 
 .second-section__list-item {
   width: calc((100% - 72px) / 4);
-  flex-basis: calc((100% - 72px) / 4);
 }
 
 .visually-hidden {
@@ -220,6 +226,8 @@ a {
 }
 
 .second-section__list-title {
+  width: 288px;
+  height: 40px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -788,6 +796,13 @@ input.checkbox-input:checked + span.checkbox-icon svg {
     flex-direction: column;
     align-items: center;
   }
+  .third-section__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .third-section__list .list-item {
+    width: 264px;
+  }
 }
 /* Ortak stil */
 body {
@@ -1002,6 +1017,9 @@ body {
   .container {
     width: 100%;
   }
+  .first-section .container {
+    background-image: url(../images/peoplebg.jpg);
+  }
   body {
     font-size: 14px;
     width: 100%;
@@ -1018,12 +1036,17 @@ body {
   .nav-logo {
     display: flex;
     justify-content: space-between;
+    margin-left: 270px;
+  }
+  .nav-logo .logo-span {
+    margin-bottom: 30px;
   }
   /* SECOND SECTION */
   .second-section .second-section__list {
     justify-content: center;
     flex-direction: column;
     gap: 72px;
+    align-items: center;
   }
   .second-section
     .container
@@ -1038,6 +1061,15 @@ body {
     flex-direction: column;
     justify-content: center;
   }
+  .second-section__list-item {
+    width: 288px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-container {
+    visibility: hidden;
+  }
   /* THIRD SECTION */
   .third-section .container {
     padding: 0 28px;
@@ -1046,7 +1078,6 @@ body {
     justify-content: center;
   }
   .third-section .third-section__list .list-item {
-    min-width: 100%;
   }
   /* FOURTH SECTION */
   .forth-section .container {
@@ -1147,16 +1178,14 @@ body {
   body {
     font-size: 18px;
   }
-
-  .modal {
-    background-image: url(/images/peoplebg.jpg); /* Standart */
-    background-size: cover;
+  .first-section .container {
+    background-image: url(../images/peoplebg.jpg);
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .modal {
-    background-image: url(/images/peoplebg.jpg); /* Retina */
+    background-image: url(../images/peoplebg.jpg); /* Retina */
   }
 }
 #mobile-menu {
@@ -1250,4 +1279,6 @@ body {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1100; /* Menünün üstünde olsun */
+  margin-left: 310px;
+  margin-top: 15px;
 }
