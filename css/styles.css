@@ -594,9 +594,11 @@ a {
 
 .close-modal-btn:hover {
   background-color: #404bbf;
+  fill: #ffffff;
 }
 .close-modal-btn:focus {
   border: none;
+  fill: #ffffff;
 }
 
 /* SVG Styles */
@@ -605,10 +607,6 @@ a {
   left: 16px;
 }
 
-.close-modal-btn:hover .close-icon,
-.close-modal-btn:focus .close-icon {
-  fill: #ffffff;
-}
 .modal-message-text {
   font-weight: 500;
   font-size: 16px;
@@ -725,9 +723,8 @@ input.checkbox-input:checked + span.checkbox-icon svg {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  border: none;
+  fill: #f4f4fd;
 }
 
 .checkbox-icon {
@@ -825,7 +822,7 @@ body {
   display: block;
 }
 
-.modal-window .modal-container {
+.modal-container {
   top: 50%;
   left: 50%;
   width: 408px;
@@ -840,7 +837,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.modal-window .close-modal-btn {
+.close-modal-btn {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -905,7 +902,7 @@ body {
   position: relative;
 }
 
-.modal-form .form-input {
+.modal-form .form-input .form-group {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -939,7 +936,7 @@ body {
   margin-bottom: 16px;
 }
 
-.form-group .form-textarea {
+.form-label .form-textarea {
   width: 100%;
   height: 120px;
   font-size: 12px;
@@ -976,12 +973,6 @@ body {
   fill: transparent;
 }
 
-.checkbox-input visually-hidden:checked + .checkbox-label .checkbox-icon {
-  background-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
-}
-
 .privacy-link {
   color: #4d5ae5;
 }
@@ -999,49 +990,59 @@ body {
   background-color: #4d5ae5;
   border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: auto;
 }
-
+.checkbox-input visually-hidden:checked + .checkbox-label .checkbox-icon {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
 /* Mobil cihazlar */
 @media (max-width: 767px) {
   body {
     font-size: 14px;
-  }
-  .nav-address {
-    display: none;
-  }
-  .header-container {
     width: 100%;
   }
+  .contact-list {
+    display: none;
+  }
+  .header__container {
+    width: 100%;
+  }
+  .nav-logo {
+    display: flex;
+    justify-content: space-between;
+  }
   /* SECOND SECTION */
-  .second-section-list {
+  .second-section__list {
     justify-content: center;
   }
-  .second-section-text-container {
+  .second-section__list-title {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
   }
   /* THIRD SECTION */
-  .third-section-list {
+  .third-section__list {
     justify-content: center;
   }
   /* FOURTH SECTION */
-  .fourth-section-list {
+  .fourth-section__list {
     justify-content: center;
   }
   /* FOOTER SECTION */
-  .footer-logo-p-container {
+  .footer .container {
     flex-direction: column;
     align-items: center;
     display: flex;
   }
-  .footer-text-socials-container {
+  .social-container.text {
     flex-direction: column;
     align-items: center;
     display: flex;
   }
-  .footer-socials-container {
+  .social-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -1052,12 +1053,12 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  .footer-form {
+  .subscribe-form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .footer-container {
+  .subscribe-container {
     padding: 96px 16px;
   }
   /* HAMBURGER MENU */
